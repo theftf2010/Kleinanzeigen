@@ -111,6 +111,6 @@ input:read-only{
     background-color: lightgray;
 }
 
-select:read-only{
+select:disabled{
     background-color: lightgray;
 }
