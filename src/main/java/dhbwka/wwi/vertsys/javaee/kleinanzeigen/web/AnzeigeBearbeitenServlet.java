@@ -315,7 +315,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
 
         if (anzeige.getCategory() != null) {
             values.put("anzeige_category", new String[]{
-                anzeige.getCategory().toString()
+                Long.toString(anzeige.getCategory().getId())
             });
         }
 
