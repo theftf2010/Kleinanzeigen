@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="<c:url value="/css/anzeige_list.css"/>" />
     </jsp:attribute>
 
-        <%-- Menue --%>
+      
     <jsp:attribute name="menu">
         <div class="menuitem">
             <a href="<c:url value="/app/anzeige/new/"/>">
