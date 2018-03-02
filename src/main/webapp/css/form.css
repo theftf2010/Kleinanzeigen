@@ -107,3 +107,7 @@ form .errors {
 input:read-only{
     background-color: lightgray;
 }
+
+select:read-only{
+    background-color: lightgray;
+}
