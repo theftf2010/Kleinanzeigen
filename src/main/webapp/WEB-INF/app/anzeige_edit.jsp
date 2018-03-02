@@ -93,7 +93,7 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="anzeige_due_date" value="${anzeige_form.values["anzeige_due_date"][0]}">
+                    <input type="text" name="anzeige_due_date" value="${anzeige_form.values["anzeige_due_date"][0]}" >
                     <input type="text" name="anzeige_due_time" value="${anzeige_form.values["anzeige_due_time"][0]}">
                 </div>
 
