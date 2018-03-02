@@ -10,7 +10,7 @@
 package dhbwka.wwi.vertsys.javaee.kleinanzeigen.ejb;
 
 import dhbwka.wwi.vertsys.javaee.kleinanzeigen.jpa.User;
-import dhbwka.wwi.vertsys.javaee.kleinanzeigen.jpa.User ;
+import dhbwka.wwi.vertsys.javaee.kleinanzeigen.jpa.User;
 import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBContext;
