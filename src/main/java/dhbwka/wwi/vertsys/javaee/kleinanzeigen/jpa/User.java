@@ -69,7 +69,7 @@ public class User implements Serializable {
     @Column(name = "EMAIL", length = 64)
     @Size(min = 5, max = 64, message = "Die E-Mail Adresse muss zwischen 5 und 64 Zeichen haben!")
     @NotNull(message = "Es muss eine E-Mail Adresse eingegeben werden ")
-    @Pattern(regexp = "max.mustermann@Mail.de")
+    @Pattern(regexp = "^\\w+@\\w+\\..{2,3}(.{2,3})?$", message = "Die E-Mail muss nach der Notation xxx@xxx.xx sein")
     public String email;
     
     @Column(name = "ADRESSE", length = 64)
