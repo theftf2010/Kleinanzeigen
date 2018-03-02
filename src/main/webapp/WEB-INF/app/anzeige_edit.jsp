@@ -44,9 +44,11 @@
                 <%-- Eingabefelder --%>
                 <label for="anzeige_owner">Ersteller:</label>
                 <div class="side-by-side">
+                    <%-- Erstellerfeld kann nicht bearbeitet werden --%>
                     <input type="text" name="anzeige_owner" value="${anzeige_form.values["anzeige_owner"][0]}" readonly="readonly">
                 </div>
 
+                <%-- Ersteller Infos --%>
                 <div>
                     <ul>
                         <li>
@@ -74,7 +76,7 @@
 
                 </div>
 
-
+                <%-- Auswahlfeld für Kategorie --%>
                 <label for="anzeige_category">Kategorie:</label>
                 <div class="side-by-side">
                     <select name="anzeige_category">
@@ -88,6 +90,7 @@
                     </select>
                 </div>
 
+                <%-- Erstelldatumsfeld kann nicht bearbeitet werden --%>
                 <label for="anzeige_due_date">
                     Erstellt am:
                     <span class="required">*</span>
@@ -97,6 +100,7 @@
                     <input type="text" name="anzeige_due_time" value="${anzeige_form.values["anzeige_due_time"][0]}"readonly="readonly">
                 </div>
 
+                <%-- Auswahlfeld für Anzeigestatus --%>
                 <label for="anzeige_status">
                     Anzeigenstatus:
                     <span class="required">*</span>
@@ -111,6 +115,7 @@
                     </select>
                 </div>
 
+                <%-- Eingabefeld für Preis --%>
                 <label for="anzeige_preis">
                     Preis:
                     <span class="required">*</span>
@@ -119,8 +124,9 @@
                     <input type="text" name="anzeige_preis" value="${anzeige_form.values["anzeige_preis"][0]}">
                 </div>
 
+                <%-- Auswahlfeld für Preisart --%>
                 <label for="anzeige_preistyp">
-                    Preistart:
+                    Preisart:
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side margin">
@@ -133,6 +139,7 @@
                     </select>
                 </div>
 
+                <%-- Eingabefeld für Bezeichnung --%>
                 <label for="anzeige_short_text">
                     Bezeichnung:
                     <span class="required">*</span>
@@ -141,6 +148,7 @@
                     <input type="text" name="anzeige_short_text" value="${anzeige_form.values["anzeige_short_text"][0]}">
                 </div>
 
+                <%-- Textfeld für Beschreibung --%>
                 <label for="anzeige_long_text">
                     Beschreibung:
                 </label>
@@ -148,7 +156,7 @@
                     <textarea name="anzeige_long_text"><c:out value="${anzeige_form.values['anzeige_long_text'][0]}"/></textarea>
                 </div>
 
-                <%-- Button zum Abschicken --%>
+                <%-- Buttons zum Abschicken --%>
                 <div class="side-by-side">
                     <button class="icon-pencil" type="submit" name="action" value="save">
                         Sichern
