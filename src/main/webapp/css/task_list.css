@@ -18,3 +18,7 @@ td, th {
     text-align: left;
     vertical-align: baseline;
 }
+
+select:read-only{
+    background-color: lightgray;
+}
