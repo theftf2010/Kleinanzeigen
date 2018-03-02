@@ -12,6 +12,8 @@ Creative Commons Namensnennung 4.0 International Lizenz.
  * Vertikal gestapelte Formulare
  */
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 /* Jede Spalte max. 30em breit */
 form.stacked .column {
     max-width: 30em;
@@ -123,4 +125,9 @@ select:disabled{
 */
 textarea:read-only{
     background-color: lightgray;
+}
+
+textarea {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10pt;
 }
