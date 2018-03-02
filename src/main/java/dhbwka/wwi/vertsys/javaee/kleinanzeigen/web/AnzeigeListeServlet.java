@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet für die Startseite bzw. jede Seite, die eine Liste der Aufgaben
+ * Servlet für die Startseite bzw. jede Seite, die eine Liste der Anzeigen
  * zeigt.
  */
 @WebServlet(urlPatterns = {"/app/anzeigen/"})
@@ -49,7 +49,7 @@ public class AnzeigeListeServlet extends HttpServlet {
         String searchCategory = request.getParameter("search_category");
         String searchStatus = request.getParameter("search_status");
 
-        // Anzuzeigende Aufgaben suchen
+        // Anzuzeigende Anzeigen suchen
         Category category = null;
         AnzeigeStatus status = null;
 

@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * Eine zu erledigende Aufgabe.
+ * Eine zu erledigende Anzeige.
  */
 @Entity
 public class Anzeige implements Serializable {
@@ -38,7 +38,7 @@ public class Anzeige implements Serializable {
     private long id;
 
     @ManyToOne
-    @NotNull(message = "Die Aufgabe muss einem Benutzer geordnet werden.")
+    @NotNull(message = "Die Anzeige muss einem Benutzer geordnet werden.")
     private User owner;
 
     @ManyToOne

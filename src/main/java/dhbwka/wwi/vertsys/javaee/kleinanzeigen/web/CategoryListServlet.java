@@ -149,7 +149,7 @@ public class CategoryListServlet extends HttpServlet {
                 continue;
             }
             
-            // Bei allen betroffenen Aufgaben, den Bezug zur Kategorie aufheben
+            // Bei allen betroffenen Anzeigen, den Bezug zur Kategorie aufheben
             category.getAnzeigen().forEach((Anzeige anzeige) -> {
                 anzeige.setCategory(null);
                 this.anzeigeBean.update(anzeige);

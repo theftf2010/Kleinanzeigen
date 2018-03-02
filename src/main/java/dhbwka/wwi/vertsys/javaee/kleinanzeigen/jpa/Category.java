@@ -23,7 +23,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * Kategorien, die den Aufgaben zugeordnet werden können.
+ * Kategorien, die den Anzeigen zugeordnet werden können.
  */
 @Entity
 public class Category implements Serializable {

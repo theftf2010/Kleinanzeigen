@@ -21,7 +21,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
- * Einfache EJB mit den üblichen CRUD-Methoden für Aufgaben
+ * Einfache EJB mit den üblichen CRUD-Methoden für Anzeigen
  */
 @Stateless
 @RolesAllowed("kleinanzeigen-app-user")
@@ -32,9 +32,9 @@ public class AnzeigeBean extends EntityBean<Anzeige, Long> {
     }
     
     /**
-     * Alle Aufgaben eines Benutzers, nach Fälligkeit sortiert zurückliefern.
+     * Alle Anzeigen eines Benutzers, nach Fälligkeit sortiert zurückliefern.
      * @param username Benutzername
-     * @return Alle Aufgaben des Benutzers
+     * @return Alle Anzeigen des Benutzers
      */
     public List<Anzeige> findByUsername(String username) {
         return em.createQuery("SELECT t FROM Anzeige t WHERE t.owner.username = :username ORDER BY t.erstelldatum, t.erstellzeit")
@@ -43,7 +43,7 @@ public class AnzeigeBean extends EntityBean<Anzeige, Long> {
     }
     
     /**
-     * Suche nach Aufgaben anhand ihrer Bezeichnung, Kategorie und Status.
+     * Suche nach Anzeigen anhand ihrer Bezeichnung, Kategorie und Status.
      * 
      * Anders als in der Vorlesung behandelt, wird die SELECT-Anfrage hier
      * mit der CriteriaBuilder-API vollkommen dynamisch erzeugt.
@@ -51,7 +51,7 @@ public class AnzeigeBean extends EntityBean<Anzeige, Long> {
      * @param search In der Kurzbeschreibung enthaltener Text (optional)
      * @param category Kategorie (optional)
      * @param status Status (optional)
-     * @return Liste mit den gefundenen Aufgaben
+     * @return Liste mit den gefundenen Anzeigen
      */
     public List<Anzeige> search(String search, Category category, AnzeigeStatus status) {
         // Hilfsobjekt zum Bauen des Query

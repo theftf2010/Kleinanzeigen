@@ -10,7 +10,7 @@
 package dhbwka.wwi.vertsys.javaee.kleinanzeigen.jpa;
 
 /**
- * Statuswerte einer Aufgabe.
+ * Statuswerte einer Anzeige.
  */
 public enum AnzeigeStatus {
     ANZEIGE, SEEKER;

@@ -32,7 +32,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Seite zum Anlegen oder Bearbeiten einer Aufgabe.
+ * Seite zum Anlegen oder Bearbeiten einer Anzeige.
  */
 @WebServlet(urlPatterns = "/app/anzeige/*")
 public class AnzeigeBearbeitenServlet extends HttpServlet {
@@ -62,7 +62,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
         Object ownerlist = anzeigetaker.getOwner();
         request.setAttribute("owner_list", ownerlist);
 
-        // Zu bearbeitende Aufgabe einlesen
+        // Zu bearbeitende Anzeige einlesen
         HttpSession session = request.getSession();
 
         Anzeige anzeige = this.getRequestedAnzeige(request);
@@ -121,7 +121,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
     }
 
     /**
-     * Aufgerufen in doPost(): Neue oder vorhandene Aufgabe speichern
+     * Aufgerufen in doPost(): Neue oder vorhandene Anzeige speichern
      *
      * @param request
      * @param response
@@ -217,7 +217,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
     }
 
     /**
-     * Aufgerufen in doPost: Vorhandene Aufgabe löschen
+     * Aufgerufen in doPost: Vorhandene Anzeige löschen
      *
      * @param request
      * @param response
@@ -259,12 +259,12 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
     }
 
     /**
-     * Zu bearbeitende Aufgabe aus der URL ermitteln und zurückgeben. Gibt
+     * Zu bearbeitende Anzeige aus der URL ermitteln und zurückgeben. Gibt
      * entweder einen vorhandenen Datensatz oder ein neues, leeres Objekt
      * zurück.
      *
      * @param request HTTP-Anfrage
-     * @return Zu bearbeitende Aufgabe
+     * @return Zu bearbeitende Anzeige
      */
     private Anzeige getRequestedAnzeige(HttpServletRequest request) {
         // Zunächst davon ausgehen, dass ein neuer Satz angelegt werden soll
@@ -303,7 +303,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
      * Formular aus der Entity oder aus einer vorherigen Formulareingabe
      * stammen.
      *
-     * @param anzeige Die zu bearbeitende Aufgabe
+     * @param anzeige Die zu bearbeitende Anzeige
      * @return Neues, gefülltes FormValues-Objekt
      */
     private FormValues createAnzeigeForm(Anzeige anzeige) {

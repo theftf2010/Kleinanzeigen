@@ -64,7 +64,7 @@
         <description>
             Ein Benutzer der kleinanzeigen-Beispielanwendung. Jeder Benutzer muss
             mindestens diese Rolle besitzen, um sich einloggen und neue
-            Aufgaben anlegen zu können.
+            Anzeigen anlegen zu können.
         </description>
         <role-name>kleinanzeigen-app-user</role-name>
     </security-role>
