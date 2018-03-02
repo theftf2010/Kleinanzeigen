@@ -80,7 +80,7 @@ public class User implements Serializable {
     public String adresse;
 
     @Column(name = "POSTLEITZAHL", length = 64)
-    @Size(min = 5, max = 64, message = "Die Postleitzahl muss genau 5 Zeichen haben!")
+    @Size(min = 5, max = 5, message = "Die Postleitzahl muss genau 5 Zeichen haben!")
     @NotNull(message = "Es muss eine Postleitzahl eingegeben werden ")
     public String postleitzahl;
 
