@@ -42,7 +42,7 @@
                 <input type="hidden" name="csrf_token" value="${csrf_token}">
 
                 <%-- Eingabefelder --%>
-                <label for="anzeige_owner">Eigentümer:</label>
+                <label for="anzeige_owner">Ersteller:</label>
                 <div class="side-by-side">
                     <input type="text" name="anzeige_owner" value="${anzeige_form.values["anzeige_owner"][0]}" readonly="readonly">
                 </div>

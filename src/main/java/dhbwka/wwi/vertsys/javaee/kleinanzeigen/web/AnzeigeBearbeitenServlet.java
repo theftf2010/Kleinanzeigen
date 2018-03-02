@@ -191,7 +191,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
         String useduser = this.userBean.getCurrentUser().getUsername();
 
         if (!owner.equals(useduser)) {
-            errors.add("Sie dürfen diesen Artikel nicht speichern. Sie sind nicht der Eigentümer!");
+            errors.add("Sie dürfen diesen Artikel nicht speichern. Sie sind nicht der Ersteller!");
         }
 
         // Datensatz speichern
@@ -235,7 +235,7 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
         String useduser = this.userBean.getCurrentUser().getUsername();
 
         if (!owner.equals(useduser)) {
-            errors.add("Sie dürfen diesen Artikel nicht löschen! Sie sind nicht der Eigentümer!");
+            errors.add("Sie dürfen diesen Artikel nicht löschen! Sie sind nicht der Ersteller!");
         }
 
         // Datensatz löschen
