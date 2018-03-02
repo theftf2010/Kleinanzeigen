@@ -73,9 +73,26 @@ public class AnzeigeBearbeitenServlet extends HttpServlet {
             // daher Formulardaten aus dem Datenbankobjekt übernehmen
             request.setAttribute("anzeige_form", this.createAnzeigeForm(anzeige));
         }
+        
+        // readonly wenn Bearbeiter nicht Ersteller
+        String owner = anzeigetaker.getOwner().getUsername();
+        String useduser = this.userBean.getCurrentUser().getUsername();
+
+        if (owner.equals(useduser)) {
+
 
         // Anfrage an die JSP weiterleiten
         request.getRequestDispatcher("/WEB-INF/app/anzeige_edit.jsp").forward(request, response);
+        
+        }
+        
+        if (!owner.equals(useduser)) {
+
+
+        // Anfrage an die JSP weiterleiten
+        request.getRequestDispatcher("/WEB-INF/app/anzeige_edit_1.jsp").forward(request, response);
+        
+        }
 
         session.removeAttribute("anzeige_form");
     }

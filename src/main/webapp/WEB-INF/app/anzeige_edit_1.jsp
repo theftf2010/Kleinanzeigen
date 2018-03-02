@@ -42,7 +42,7 @@
                 <input type="hidden" name="csrf_token" value="${csrf_token}">
 
                 <%-- Eingabefelder --%>
-                <label for="anzeige_owner">Eigentümer:</label>
+                <label for="anzeige_owner">Ersteller:</label>
                 <div class="side-by-side">
                     <input type="text" name="anzeige_owner" value="${anzeige_form.values["anzeige_owner"][0]}" readonly="readonly">
                 </div>
@@ -77,7 +77,7 @@
 
                 <label for="anzeige_category">Kategorie:</label>
                 <div class="side-by-side">
-                    <select name="anzeige_category">
+                    <select name="anzeige_category" disabled>
                         <option value="">Keine Kategorie</option>
 
                         <c:forEach items="${categories}" var="category">
@@ -93,8 +93,8 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="anzeige_due_date" value="${anzeige_form.values["anzeige_due_date"][0]}">
-                    <input type="text" name="anzeige_due_time" value="${anzeige_form.values["anzeige_due_time"][0]}">
+                    <input type="text" name="anzeige_due_date" value="${anzeige_form.values["anzeige_due_date"][0]}" readonly="readonly">
+                    <input type="text" name="anzeige_due_time" value="${anzeige_form.values["anzeige_due_time"][0]}" readonly="readonly">
                 </div>
 
                 <label for="anzeige_status">
@@ -102,7 +102,7 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side margin">
-                    <select name="anzeige_status">
+                    <select name="anzeige_status" disabled>
                         <c:forEach items="${statuses}" var="status">
                             <option value="${status}" ${anzeige_form.values["anzeige_status"][0] == status ? 'selected' : ''}>
                                 <c:out value="${status.label}"/>
@@ -116,7 +116,7 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="anzeige_preis" value="${anzeige_form.values["anzeige_preis"][0]}">
+                    <input type="text" name="anzeige_preis" value="${anzeige_form.values["anzeige_preis"][0]}" readonly="readonly">
                 </div>
 
                 <label for="anzeige_preistyp">
@@ -124,7 +124,7 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side margin">
-                    <select name="anzeige_preistyp">
+                    <select name="anzeige_preistyp" disabled>
                         <c:forEach items="${pricetypes}" var="pricetype">
                             <option value="${pricetype}" ${anzeige_form.values["anzeige_preistyp"][0] == pricetype ? 'selected' : ''}>
                                 <c:out value="${pricetype.label}"/>
@@ -138,29 +138,17 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="anzeige_short_text" value="${anzeige_form.values["anzeige_short_text"][0]}">
+                    <input type="text" name="anzeige_short_text" value="${anzeige_form.values["anzeige_short_text"][0]}" readonly="readonly">
                 </div>
 
                 <label for="anzeige_long_text">
                     Beschreibung:
                 </label>
                 <div class="side-by-side">
-                    <textarea name="anzeige_long_text"><c:out value="${anzeige_form.values['anzeige_long_text'][0]}"/></textarea>
+                    <textarea name="anzeige_long_text" readonly="readonly"><c:out value="${anzeige_form.values['anzeige_long_text'][0]}"/></textarea>
                 </div>
 
-                <%-- Button zum Abschicken --%>
-                <div class="side-by-side">
-                    <button class="icon-pencil" type="submit" name="action" value="save">
-                        Sichern
-                    </button>
 
-                    <c:if test="${edit}">
-                        <button class="icon-trash" type="submit" name="action" value="delete">
-                            Löschen
-                        </button>
-                    </c:if>
-                </div>
-            </div>
 
             <%-- Fehlermeldungen --%>
             <c:if test="${!empty anzeige_form.errors}">
