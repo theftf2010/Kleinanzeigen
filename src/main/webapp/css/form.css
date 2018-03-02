@@ -105,16 +105,22 @@ form .errors {
 }
 
 /*
-*readonly Felder ausgrauen
+*readonly Felder ausgrauen, wenn read-only
 */
 input:read-only{
     background-color: lightgray;
 }
 
+/* 
+*Select Felder ausgrauen, wenn disabled
+*/
 select:disabled{
     background-color: lightgray;
 }
 
+/* 
+*Beschreibungstext ausgrauen, wenn read-only
+*/
 textarea:read-only{
     background-color: lightgray;
 }
