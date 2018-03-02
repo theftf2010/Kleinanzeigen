@@ -24,6 +24,7 @@
                         Benutzername:
                         <span class="required">*</span>
                     </label>
+                    <%-- username kann nicht bearbeitet werden --%>
                     <div class="side-by-side">
                         <input type="text" name="login_username" value="${benutzer.username}" readonly="readonly">
                     </div>
