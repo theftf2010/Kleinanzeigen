@@ -58,28 +58,27 @@ public class Anzeige implements Serializable {
 
     @NotNull(message = "Die Uhrzeit darf nicht leer sein.")
     private Time erstellzeit;
-    
+
     //String für weitere Angaben wie z.B. Tausch/Bitcoin, jedoch mindestens eine Stelle
     @NotNull(message = "Der Preis darf nicht leer sein")
-    @Size(min=1, max=20, message = "Der Preis muss zwischen 1 und 20 Zeichen haben ")
+    @Size(min = 1, max = 20, message = "Der Preis muss zwischen 1 und 20 Zeichen haben ")
     private String preis;
 
     @Enumerated(EnumType.STRING)
     @NotNull
     private AnzeigeStatus status = AnzeigeStatus.ANZEIGE;
-    
+
     @Enumerated(EnumType.STRING)
     @NotNull
     private AnzeigePreisTyp preistyp = AnzeigePreisTyp.FIXED;
-    
 
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public Anzeige() {
     }
 
-    public Anzeige(User owner, Category category, String shortText, String longText, 
+    public Anzeige(User owner, Category category, String shortText, String longText,
             Date erstelldatum, Time erstellzeit, String preis) {
-        
+
         this.owner = owner;
         this.category = category;
         this.shortText = shortText;
