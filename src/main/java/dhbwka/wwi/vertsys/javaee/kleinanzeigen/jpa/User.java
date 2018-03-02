@@ -42,7 +42,7 @@ public class User implements Serializable {
 
     @Id
     @Column(name = "USERNAME", length = 64)
-    @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen fünf und 64 Zeichen lang sein.")
+    @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen 5 und 64 Zeichen lang sein.")
     @NotNull(message = "Der Benutzername darf nicht leer sein.")
     private String username;
     
@@ -52,39 +52,39 @@ public class User implements Serializable {
     }
     
     @Column(name = "NACHNAME", length = 64)
-    @Size(min = 5, max = 64, message = "Der Nachname muss zwischen 5 und 64 haben!")
-    @NotNull(message = "Es muss ein Nachname eingeben werden ")
+    @Size(min = 2, max = 64, message = "Der Nachname muss zwischen 2 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss ein Nachname eingegeben werden ")
     public String nachname;
     
     @Column(name = "VORNAME", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 2, max = 64, message = "Der Vorname muss zwischen 2 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss ein Vorname eingegeben werden ")
     public String vorname;
     
     @Column(name = "TELEFONNUMMER", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 5, max = 64, message = "Die Telefonnummer muss zwischen 5 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss eine Telefonnummer eingegeben werden ")
     public String telefonnummer;
     
     @Column(name = "EMAIL", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
-    @Pattern(regexp = "^\\w+@\\w+\\..{2,3}(.{2,3})?$")
+    @Size(min = 5, max = 64, message = "Die E-Mail Adresse muss zwischen 5 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss eine E-Mail Adresse eingegeben werden ")
+    @Pattern(regexp = "max.mustermann@Mail.de")
     public String email;
     
     @Column(name = "ADRESSE", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 5, max = 64, message = "Die Adresse muss zwischen 5 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss eine Adresse eingegeben werden ")
     public String adresse;
     
     @Column(name = "POSTLEITZAHL", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 5, max = 64, message = "Die Postleitzahl muss genau 5 Zeichen haben!")
+    @NotNull(message = "Es muss eine Postleitzahl eingegeben werden ")
     public String postleitzahl;
     
     @Column(name = "STADT", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 5, max = 64, message = "Die Stadt muss zwischen 5 und 64 Zeichen haben!")
+    @NotNull(message = "Es muss eine Stadt eingegeben werden ")
     public String stadt;
         
     @Transient
