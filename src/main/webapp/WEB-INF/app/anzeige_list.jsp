@@ -81,7 +81,7 @@
                         <tr>
                             <th>Bezeichnung</th>
                             <th>Kategorie</th>
-                            <th>Eigentümer</th>
+                            <th>Ersteller</th>
                             <th>Anzeigenstatus</th>
                             <th>Erstellt am</th>
                             <th>Preis</th>
