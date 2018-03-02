@@ -7,6 +7,8 @@
     Dieser Quellcode ist lizenziert unter einer
     Creative Commons Namensnennung 4.0 International Lizenz.
 --%>
+
+<%-- JSP wenn Bearbeiter nicht Ersteller, alles readonly --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@taglib tagdir="/WEB-INF/tags/templates" prefix="template"%>
@@ -42,11 +44,14 @@
                 <input type="hidden" name="csrf_token" value="${csrf_token}">
 
                 <%-- Eingabefelder --%>
+                
                 <label for="anzeige_owner">Ersteller:</label>
                 <div class="side-by-side">
+                    <%-- Erstellerfeld kann nicht bearbeitet werden --%>
                     <input type="text" name="anzeige_owner" value="${anzeige_form.values["anzeige_owner"][0]}" readonly="readonly">
                 </div>
 
+                <%-- Ersteller Infos --%>
                 <div>
                     <ul>
                         <li>
@@ -74,7 +79,7 @@
 
                 </div>
 
-
+<%-- Auswahlfeld für Kategorie kann nicht bearbeitet werden --%>
                 <label for="anzeige_category">Kategorie:</label>
                 <div class="side-by-side">
                     <select name="anzeige_category" disabled>
@@ -88,6 +93,7 @@
                     </select>
                 </div>
 
+                <%-- Erstelldatumsfeld kann nicht bearbeitet werden --%>
                 <label for="anzeige_due_date">
                     Erstellt am:
                     <span class="required">*</span>
@@ -97,6 +103,7 @@
                     <input type="text" name="anzeige_due_time" value="${anzeige_form.values["anzeige_due_time"][0]}" readonly="readonly">
                 </div>
 
+                <%-- Auswahlfeld für Anzeigestatus kann nicht bearbeitet werden --%>
                 <label for="anzeige_status">
                     Anzeigenstatus:
                     <span class="required">*</span>
@@ -111,6 +118,7 @@
                     </select>
                 </div>
 
+                <%-- Eingabefeld für Preis kann nicht bearbeitet werden --%>
                 <label for="anzeige_preis">
                     Preis:
                     <span class="required">*</span>
@@ -119,6 +127,7 @@
                     <input type="text" name="anzeige_preis" value="${anzeige_form.values["anzeige_preis"][0]}" readonly="readonly">
                 </div>
 
+                <%-- Auswahlfeld für Preisart kann nicht bearbeitet werden --%>
                 <label for="anzeige_preistyp">
                     Preisart:
                     <span class="required">*</span>
@@ -133,6 +142,7 @@
                     </select>
                 </div>
 
+                <%-- Eingabefeld für Bezeichnung kann nicht bearbeitet werden --%>
                 <label for="anzeige_short_text">
                     Bezeichnung:
                     <span class="required">*</span>
@@ -141,6 +151,7 @@
                     <input type="text" name="anzeige_short_text" value="${anzeige_form.values["anzeige_short_text"][0]}" readonly="readonly">
                 </div>
 
+                 <%-- Textfeld für Beschreibung kann nicht bearbeitet werden--%>
                 <label for="anzeige_long_text">
                     Beschreibung:
                 </label>
