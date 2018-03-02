@@ -106,7 +106,6 @@
                             </td>
                             <td>
                                 <c:out value="${utils.formatDate(anzeige.erstelldatum)}"/>
-                                <c:out value="${utils.formatTime(anzeige.erstellzeit)}"/>
                             </td>
                             <td>
                                 <c:out value="${anzeige.preis}"/>
