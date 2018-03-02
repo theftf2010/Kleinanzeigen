@@ -127,6 +127,10 @@ textarea:read-only{
     background-color: lightgray;
 }
 
+/*
+*Fontart im Beschriebungstext ändern
+*/
+
 textarea {
     font-family: 'Quicksand', sans-serif;
     font-size: 10pt;
