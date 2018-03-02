@@ -52,8 +52,8 @@ public class User implements Serializable {
     }
     
     @Column(name = "NACHNAME", length = 64)
-    @Size(min = 5, max = 64, message = "Eingabe muss zwischen 5 und 64 liegen!")
-    @NotNull(message = "hier einen eigenen Text eingeben ")
+    @Size(min = 5, max = 64, message = "Der Nachname muss zwischen 5 und 64 haben!")
+    @NotNull(message = "Es muss ein Nachname eingeben werden ")
     public String nachname;
     
     @Column(name = "VORNAME", length = 64)
