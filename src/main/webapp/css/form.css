@@ -104,6 +104,9 @@ form .errors {
     color: red;
 }
 
+/*
+*readonly Felder ausgegraut
+*/
 input:read-only{
     background-color: lightgray;
 }
