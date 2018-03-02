@@ -59,6 +59,7 @@ public class Anzeige implements Serializable {
     @NotNull(message = "Die Uhrzeit darf nicht leer sein.")
     private Time erstellzeit;
     
+    //String für weitere Angaben wie z.B. Tausch/Bitcoin, jedoch mindestens eine Stelle
     @NotNull(message = "Der Preis darf nicht leer sein")
     @Size(min=1, max=20, message = "Der Preis muss zwischen 1 und 20 Zeichen haben ")
     private String preis;
