@@ -70,7 +70,7 @@
                                 <br />
                             </c:forEach>
                         </div>
-
+                        <%-- Loeschbutton --%>
                         <button type="submit" name="action" value="delete" class="icon-trash">
                             Markierte löschen
                         </button>
