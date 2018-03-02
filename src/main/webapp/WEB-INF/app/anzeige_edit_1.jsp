@@ -120,7 +120,7 @@
                 </div>
 
                 <label for="anzeige_preistyp">
-                    Preistyp:
+                    Preisart:
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side margin">
