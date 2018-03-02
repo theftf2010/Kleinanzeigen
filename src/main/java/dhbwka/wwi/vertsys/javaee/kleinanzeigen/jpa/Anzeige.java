@@ -46,7 +46,7 @@ public class Anzeige implements Serializable {
 
     @Column(length = 50)
     @NotNull(message = "Die Bezeichnung darf nicht leer sein.")
-    @Size(min = 1, max = 50, message = "Die Bezeichnung muss zwischen ein und 50 Zeichen lang sein.")
+    @Size(min = 1, max = 50, message = "Die Bezeichnung muss zwischen 1 und 50 Zeichen lang sein.")
     private String shortText;
 
     @Lob
@@ -59,7 +59,8 @@ public class Anzeige implements Serializable {
     @NotNull(message = "Die Uhrzeit darf nicht leer sein.")
     private Time erstellzeit;
     
-    @NotNull(message = "hier eigene Nachricht erfinden")
+    @NotNull(message = "Der Preis darf nicht leer sein")
+    @Size(min=1, max=20, message = "Der Preis muss zwischen 1 und 20 Zeichen haben ")
     private String preis;
 
     @Enumerated(EnumType.STRING)
