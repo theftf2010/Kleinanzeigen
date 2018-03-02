@@ -44,7 +44,7 @@
                 <input type="hidden" name="csrf_token" value="${csrf_token}">
 
                 <%-- Eingabefelder --%>
-                
+
                 <label for="anzeige_owner">Ersteller:</label>
                 <div class="side-by-side">
                     <%-- Erstellerfeld kann nicht bearbeitet werden --%>
@@ -79,7 +79,7 @@
 
                 </div>
 
-<%-- Auswahlfeld für Kategorie kann nicht bearbeitet werden --%>
+                <%-- Auswahlfeld für Kategorie kann nicht bearbeitet werden --%>
                 <label for="anzeige_category">Kategorie:</label>
                 <div class="side-by-side">
                     <select name="anzeige_category" disabled>
@@ -151,7 +151,7 @@
                     <input type="text" name="anzeige_short_text" value="${anzeige_form.values["anzeige_short_text"][0]}" readonly="readonly">
                 </div>
 
-                 <%-- Textfeld für Beschreibung kann nicht bearbeitet werden--%>
+                <%-- Textfeld für Beschreibung kann nicht bearbeitet werden--%>
                 <label for="anzeige_long_text">
                     Beschreibung:
                 </label>
@@ -161,14 +161,14 @@
 
 
 
-            <%-- Fehlermeldungen --%>
-            <c:if test="${!empty anzeige_form.errors}">
-                <ul class="errors">
-                    <c:forEach items="${anzeige_form.errors}" var="error">
-                        <li>${error}</li>
-                        </c:forEach>
-                </ul>
-            </c:if>
+                <%-- Fehlermeldungen --%>
+                <c:if test="${!empty anzeige_form.errors}">
+                    <ul class="errors">
+                        <c:forEach items="${anzeige_form.errors}" var="error">
+                            <li>${error}</li>
+                            </c:forEach>
+                    </ul>
+                </c:if>
         </form>
     </jsp:attribute>
 </template:base>

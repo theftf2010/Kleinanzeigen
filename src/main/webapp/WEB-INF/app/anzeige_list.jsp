@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="<c:url value="/css/anzeige_list.css"/>" />
     </jsp:attribute>
 
-      
+
     <jsp:attribute name="menu">
         <div class="menuitem">
             <a href="<c:url value="/app/anzeige/new/"/>">
@@ -76,7 +76,7 @@
             </c:when>
             <c:otherwise>
                 <jsp:useBean id="utils" class="dhbwka.wwi.vertsys.javaee.kleinanzeigen.web.WebUtils"/>
-                
+
                 <table>
                     <thead>
                         <tr>
