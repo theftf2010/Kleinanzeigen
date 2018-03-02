@@ -114,3 +114,7 @@ input:read-only{
 select:disabled{
     background-color: lightgray;
 }
+
+textarea:read-only{
+    background-color: lightgray;
+}
