@@ -40,53 +40,55 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+//Neue Fehlermeldungen bei flascher Edit Eingabe
     @Id
     @Column(name = "USERNAME", length = 64)
     @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen 5 und 64 Zeichen lang sein.")
     @NotNull(message = "Der Benutzername darf nicht leer sein.")
     private String username;
-    
+
     public class Password {
+
         @Size(min = 6, max = 64, message = "Das Passwort muss zwischen sechs und 64 Zeichen lang sein.")
         public String password = "";
     }
-    
+
     @Column(name = "NACHNAME", length = 64)
     @Size(min = 2, max = 64, message = "Der Nachname muss zwischen 2 und 64 Zeichen haben!")
     @NotNull(message = "Es muss ein Nachname eingegeben werden ")
     public String nachname;
-    
+
     @Column(name = "VORNAME", length = 64)
     @Size(min = 2, max = 64, message = "Der Vorname muss zwischen 2 und 64 Zeichen haben!")
     @NotNull(message = "Es muss ein Vorname eingegeben werden ")
     public String vorname;
-    
+
     @Column(name = "TELEFONNUMMER", length = 64)
     @Size(min = 5, max = 64, message = "Die Telefonnummer muss zwischen 5 und 64 Zeichen haben!")
     @NotNull(message = "Es muss eine Telefonnummer eingegeben werden ")
     public String telefonnummer;
-    
+
     @Column(name = "EMAIL", length = 64)
     @Size(min = 5, max = 64, message = "Die E-Mail Adresse muss zwischen 5 und 64 Zeichen haben!")
     @NotNull(message = "Es muss eine E-Mail Adresse eingegeben werden ")
     @Pattern(regexp = "^\\w+@\\w+\\..{2,3}(.{2,3})?$", message = "Die E-Mail muss nach der Notation xxx@xxx.xx sein")
     public String email;
-    
+
     @Column(name = "ADRESSE", length = 64)
     @Size(min = 5, max = 64, message = "Die Adresse muss zwischen 5 und 64 Zeichen haben!")
     @NotNull(message = "Es muss eine Adresse eingegeben werden ")
     public String adresse;
-    
+
     @Column(name = "POSTLEITZAHL", length = 64)
     @Size(min = 5, max = 64, message = "Die Postleitzahl muss genau 5 Zeichen haben!")
     @NotNull(message = "Es muss eine Postleitzahl eingegeben werden ")
     public String postleitzahl;
-    
+
     @Column(name = "STADT", length = 64)
     @Size(min = 5, max = 64, message = "Die Stadt muss zwischen 5 und 64 Zeichen haben!")
     @NotNull(message = "Es muss eine Stadt eingegeben werden ")
     public String stadt;
-        
+
     @Transient
     private final Password password = new Password();
 
@@ -108,11 +110,11 @@ public class User implements Serializable {
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public User() {
     }
-    
-    public User(String username, String password, 
-        String vorname, String nachname, String telefonnummer,
-        String email, String adresse, String postleitzahl, String stadt) {
-        
+
+    public User(String username, String password,
+            String vorname, String nachname, String telefonnummer,
+            String email, String adresse, String postleitzahl, String stadt) {
+
         this.username = username;
         this.password.password = password;
         this.passwordHash = this.hashPassword(password);
@@ -123,7 +125,7 @@ public class User implements Serializable {
         this.postleitzahl = postleitzahl;
         this.stadt = stadt;
         this.adresse = adresse;
-        
+
     }
     //</editor-fold>
 
@@ -214,7 +216,7 @@ public class User implements Serializable {
         if (password == null) {
             password = "";
         }
-        
+
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
@@ -230,10 +232,10 @@ public class User implements Serializable {
      * Berechnet einen Hashwert aus dem übergebenen Passwort und legt ihn im
      * Feld passwordHash ab. Somit wird das Passwort niemals als Klartext
      * gespeichert.
-     * 
+     *
      * Gleichzeitig wird das Passwort im nicht gespeicherten Feld password
-     * abgelegt, um durch die Bean Validation Annotationen überprüft werden
-     * zu können.
+     * abgelegt, um durch die Bean Validation Annotationen überprüft werden zu
+     * können.
      *
      * @param password Neues Passwort
      */
@@ -244,12 +246,13 @@ public class User implements Serializable {
 
     /**
      * Nur für die Validierung bei einer Passwortänderung!
+     *
      * @return Neues, beim Speichern gesetztes Passwort
      */
     public Password getPassword() {
         return this.password;
     }
-    
+
     /**
      * Prüft, ob das übergebene Passwort korrekt ist.
      *
